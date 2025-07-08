@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YeniHesapMakinesi.StandardCalculatorPage"
+             Title="StandardCalculatorPage">
+    <Grid RowDefinitions="Auto,*,*" ColumnDefinitions="*">
+
+        <HorizontalStackLayout Grid.Row="0" Spacing="5" Margin="10">
+            <Button Text="MC" WidthRequest="50" Command="{Binding MemoryClearCommand}"/>
+            <Button Text="MR" WidthRequest="50" Command="{Binding MemoryRecallCommand}"/>
+            <Button Text="M+" WidthRequest="50" Command="{Binding MemoryAddCommand}"/>
+            <Button Text="M-" WidthRequest="50" Command="{Binding MemorySubtractCommand}"/>
+            <Button Text="MS" WidthRequest="50" Command="{Binding MemoryStoreCommand}"/>
+            <Button Text="Mv" WidthRequest="50" Command="{Binding MemoryViewCommand}"/>
+        </HorizontalStackLayout>
+
+        <Label Grid.Row="1" 
+               Text="{Binding DisplayValue}" 
+               FontSize="36" 
+               HorizontalTextAlignment="End" 
+               VerticalTextAlignment="Center"
+               Margin="20,0"/>
+
+        <Grid Grid.Row="2" RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*">
+
+            <Button Grid.Row="0" Grid.Column="0" Text="%" Command="{Binding PercentageCommand}"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="CE" Command="{Binding ClearEntryCommand}"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="C" Command="{Binding ClearCommand}"/>
+            <Button Grid.Row="0" Grid.Column="3" Text="⌫" Command="{Binding BackspaceCommand}"/>
+
+
+            <Button Grid.Row="1" Grid.Column="0" Text="1/x" Command="{Binding ReciprocalCommand}"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="x²" Command="{Binding SquareCommand}"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="√" Command="{Binding SquareRootCommand}"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="÷" Command="{Binding DivideCommand}"/>
+
+            <Button Grid.Row="2" Grid.Column="0" Text="7" Command="{Binding NumberCommand}" CommandParameter="7"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="8" Command="{Binding NumberCommand}" CommandParameter="8"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="9" Command="{Binding NumberCommand}" CommandParameter="9"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="×" Command="{Binding MultiplyCommand}"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Text="4" Command="{Binding NumberCommand}" CommandParameter="4"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="5" Command="{Binding NumberCommand}" CommandParameter="5"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="6" Command="{Binding NumberCommand}" CommandParameter="6"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="-" Command="{Binding SubtractCommand}"/>
+
+            <Button Grid.Row="4" Grid.Column="0" Text="1" Command="{Binding NumberCommand}" CommandParameter="1"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="2" Command="{Binding NumberCommand}" CommandParameter="2"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="3" Command="{Binding NumberCommand}" CommandParameter="3"/>
+            <Button Grid.Row="4" Grid.Column="3" Text="+" Command="{Binding AddCommand}"/>
+
+            <Button Grid.Row="5" Grid.Column="0" Text="+/-" Command="{Binding ToggleSignCommand}"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="0" Command="{Binding NumberCommand}" CommandParameter="0"/>
+            <Button Grid.Row="5" Grid.Column="2" Text="," Command="{Binding DecimalCommand}"/>
+            <Button Grid.Row="5" Grid.Column="3" Text="=" Command="{Binding EqualsCommand}" BackgroundColor="LightBlue"/>
+        </Grid>
+    </Grid>
+</ContentPage>
+3. Bilimsel Hesap Makinesi (ScientificCalculatorPage.xaml)
+xml
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalculator.ScientificCalculatorPage"
+             Title="Bilimsel Hesap Makinesi">
+
+    <Grid RowDefinitions="Auto,Auto,*,*" ColumnDefinitions="*">
+        <HorizontalStackLayout Grid.Row="0" Spacing="5" Margin="10">
+            <Button Text="DEG" WidthRequest="50" Command="{Binding ToggleAngleModeCommand}"/>
+            <Button Text="F-E" WidthRequest="50" Command="{Binding ToggleNotationCommand}"/>
+            <Button Text="MC" WidthRequest="50" Command="{Binding MemoryClearCommand}"/>
+            <Button Text="MR" WidthRequest="50" Command="{Binding MemoryRecallCommand}"/>
+            <Button Text="M+" WidthRequest="50" Command="{Binding MemoryAddCommand}"/>
+            <Button Text="M-" WidthRequest="50" Command="{Binding MemorySubtractCommand}"/>
+            <Button Text="MS" WidthRequest="50" Command="{Binding MemoryStoreCommand}"/>
+            <Button Text="Mv" WidthRequest="50" Command="{Binding MemoryViewCommand}"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="1" Spacing="5" Margin="10">
+            <Button Text="sin" Command="{Binding SinCommand}"/>
+            <Button Text="cos" Command="{Binding CosCommand}"/>
+            <Button Text="tan" Command="{Binding TanCommand}"/>
+            <Button Text="π" Command="{Binding PiCommand}"/>
+            <Button Text="e" Command="{Binding ECommand}"/>
+            <Button Text="C" Command="{Binding ClearCommand}"/>
+            <Button Text="x²" Command="{Binding SquareCommand}"/>
+            <Button Text="1/x" Command="{Binding ReciprocalCommand}"/>
+            <Button Text="|x|" Command="{Binding AbsoluteCommand}"/>
+            <Button Text="exp" Command="{Binding ExpCommand}"/>
+            <Button Text="mod" Command="{Binding ModCommand}"/>
+        </HorizontalStackLayout>
+
+
+        <Label Grid.Row="2" 
+               Text="{Binding DisplayValue}" 
+               FontSize="36" 
+               HorizontalTextAlignment="End" 
+               VerticalTextAlignment="Center"
+               Margin="20,0"/>
+
+
+        <Grid Grid.Row="3" RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+
+            <Button Grid.Row="0" Grid.Column="0" Text="√" Command="{Binding SquareRootCommand}"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="(" Command="{Binding OpenParenthesisCommand}"/>
+            <Button Grid.Row="0" Grid.Column="2" Text=")" Command="{Binding CloseParenthesisCommand}"/>
+            <Button Grid.Row="0" Grid.Column="3" Text="n!" Command="{Binding FactorialCommand}"/>
+            <Button Grid.Row="0" Grid.Column="4" Text="÷" Command="{Binding DivideCommand}"/>
+
+
+            <Button Grid.Row="1" Grid.Column="0" Text="x³" Command="{Binding CubeCommand}"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="7" Command="{Binding NumberCommand}" CommandParameter="7"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="8" Command="{Binding NumberCommand}" CommandParameter="8"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="9" Command="{Binding NumberCommand}" CommandParameter="9"/>
+            <Button Grid.Row="1" Grid.Column="4" Text="×" Command="{Binding MultiplyCommand}"/>
+
+
+            <Button Grid.Row="2" Grid.Column="0" Text="10^x" Command="{Binding PowerOfTenCommand}"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="4" Command="{Binding NumberCommand}" CommandParameter="4"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="5" Command="{Binding NumberCommand}" CommandParameter="5"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="6" Command="{Binding NumberCommand}" CommandParameter="6"/>
+            <Button Grid.Row="2" Grid.Column="4" Text="-" Command="{Binding SubtractCommand}"/>
+
+
+            <Button Grid.Row="3" Grid.Column="0" Text="log" Command="{Binding LogCommand}"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="1" Command="{Binding NumberCommand}" CommandParameter="1"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="2" Command="{Binding NumberCommand}" CommandParameter="2"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="3" Command="{Binding NumberCommand}" CommandParameter="3"/>
+            <Button Grid.Row="3" Grid.Column="4" Text="+" Command="{Binding AddCommand}"/>
+
+
+            <Button Grid.Row="4" Grid.Column="0" Text="ln" Command="{Binding NaturalLogCommand}"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="+/-" Command="{Binding ToggleSignCommand}"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="0" Command="{Binding NumberCommand}" CommandParameter="0"/>
+            <Button Grid.Row="4" Grid.Column="3" Text="," Command="{Binding DecimalCommand}"/>
+            <Button Grid.Row="4" Grid.Column="4" Text="=" Command="{Binding EqualsCommand}" BackgroundColor="LightBlue"/>
+
+            <Button Grid.Row="5" Grid.Column="0" Text="2nd" Command="{Binding SecondFunctionCommand}"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="x^y" Command="{Binding PowerCommand}"/>
+            <Button Grid.Row="5" Grid.Column="2" Text="EE" Command="{Binding ScientificNotationCommand}"/>
+            <Button Grid.Row="5" Grid.Column="3" Text="Rand" Command="{Binding RandomCommand}"/>
+            <Button Grid.Row="5" Grid.Column="4" Text="Hyp" Command="{Binding HyperbolicCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>
